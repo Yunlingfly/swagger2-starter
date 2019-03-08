@@ -15,7 +15,7 @@ import org.springframework.stereotype.Component;
 @Data
 public class SwaggerProperties {
     /**
-     * 标题
+     * 标题，必填
      */
     private String title;
     /**
@@ -27,26 +27,26 @@ public class SwaggerProperties {
      */
     private String version;
     /**
-     * 描述
+     * 描述，必填
      */
     private String description;
     /**
-     * swagger扫描的基础包，默认：全扫描
+     * swagger扫描的基础包，必填
      */
-    private String basePackage = "base-package";
+    private String basePackage = "";
     /**
      * 需要处理的基础URL规则，默认：/**
      */
-    private String basePath = "base-path";
+    private String basePath = "/**";
     /**
      * 需要排除的URL规则，默认：空
      */
-    private String excludePath = "exclude-path";
+    private String excludePath = "";
     /**
      * 许可证
      */
     private String license;
-    private String licenseUrl = "license-url";
+    private String licenseUrl;
 
     @Data
     public static class Contact {

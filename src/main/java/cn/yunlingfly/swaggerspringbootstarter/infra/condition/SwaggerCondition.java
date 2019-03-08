@@ -17,7 +17,6 @@ public class SwaggerCondition implements Condition {
         String title = context.getEnvironment().getProperty("swagger.title");
         String description = context.getEnvironment().getProperty("swagger.description");
         String basePackage = context.getEnvironment().getProperty("swagger.base-package");
-        String basePath = context.getEnvironment().getProperty("swagger.base-path");
 
         if (StringUtils.isEmpty(title)) {
             throw new RuntimeException("Lack of swagger configuration:swagger.title");
@@ -25,8 +24,6 @@ public class SwaggerCondition implements Condition {
             throw new RuntimeException("Lack of swagger configuration:swagger.description");
         } else if (StringUtils.isEmpty(basePackage)) {
             throw new RuntimeException("Lack of swagger configuration:swagger.base-package");
-        } else if (StringUtils.isEmpty(basePath)) {
-            throw new RuntimeException("Lack of swagger configuration:swagger.base-path");
         } else {
             return true;
         }
